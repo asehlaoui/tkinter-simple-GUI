@@ -8,21 +8,21 @@ from tkinter import messagebox
 
 root = Tk() #blank window called 'root'
 root.title("Age range validator")
-root.geometry("500x350+0+0")
+root.geometry("500x350+0+0") #size of root window
 
-heading = Label(root, text="Lets see if you are the right age!", font=("arial", 15, "bold"), fg="red").pack() #creates a label of text
+heading = Label(root, text="Lets see if you are the right age!", font=("arial", 15, "bold"), fg="red").pack() #creates a heading of text
 label_name = Label(root, text="Please enter your name:", font=("arial", 20, "bold"), fg="green").place(x=10, y=100)
 label_age = Label(root, text="Please enter your age:", font=("arial", 20, "bold"), fg="green").place(x=10, y=200)
 
 
-nameEntry_box = Entry(root, width=25, bg="white")
-nameEntry_box.place(x=340, y=111)
+nameEntry_box = Entry(root, width=25, bg="white") #creates the name entry box
+nameEntry_box.place(x=340, y=111) #defines the size of the entry box
 
 ageEntry_box = Entry(root, width=25, bg="white")
 ageEntry_box.place(x=340, y=210)
 
 
-def check_age():
+def check_age(): #creates the function to be called once the button is pressed
 
     if (int(ageEntry_box.get() or 0) >=18) and (int(ageEntry_box.get() or 0) <=30):
         messagebox.showinfo("Congrats!", "Welcome to the holiday trip for people between the ages of 18 and 30, "
@@ -31,7 +31,7 @@ def check_age():
         messagebox.showinfo("Error", "Sorry "
                 + nameEntry_box.get() + ", you are not within the age range to go on this trip")
 
-check = Button(root, text="Check Now", width=30, height=5, bg="white", command= check_age).place(x=120, y=250)
+check = Button(root, text="Check Now", width=30, height=5, bg="white", command= check_age).place(x=120, y=250) #creates the button and calls the function to be executed
 
 root.mainloop() #mainloop creates an inf loop of the open window so it stays open
 
